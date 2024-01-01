@@ -1,18 +1,17 @@
-name: Home Assistant
+name: HomeBridge
 description: >-
-  Open source home automation that puts local control and privacy first; a Home
-  Assistant, HASS Config, and MQTT stack.
+  Open source home automation that puts local control and privacy first.
 type: sw.application
 assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-io-experimental/balena-homeassistant'
+      url: 'https://github.com/MattiaCalabrese/balena-homebridge'
   logo:
     type: blob.asset
     data:
       url: >-
-        https://raw.githubusercontent.com/balena-io-experimental/balena-homeassistant/master/logo.png
+        https://raw.githubusercontent.com/MattiaCalabrese/balena-homebridge/master/logo.png
 data:
   defaultDeviceType: raspberrypi3
   supportedDeviceTypes:
@@ -20,4 +19,4 @@ data:
     - raspberrypi4-64
     - fincm3
     - beaglebone-black
-version: 0.0.4
+version: 0.1
