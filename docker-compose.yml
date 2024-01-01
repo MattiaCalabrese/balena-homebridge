@@ -1,29 +1,11 @@
 version: '2'
 volumes:
     config:
-    mosquitto:
 services:
-  homeassistant:
-    build: homeassistant
-    ports:
-      - 80:8123
-    privileged: true
-    volumes:
-      - 'config:/config'
+  homebridge:
+    container_name: homebridge
+    image: homebridge/homebridge:latest
     restart: always
-  mqtt:
-    build: mqtt
-    ports:
-      - "1883:1883"
-    restart: always
+    network_mode: host
     volumes:
-      - mosquitto:/mosquitto/data
-  hass-configurator:
-    image: "causticlab/hass-configurator-docker:latest"
-    restart: always
-    ports:
-      - "3218:3218"
-    volumes:
-      - 'config:/hass-config'
-    environment:
-      - HC_BASEPATH=/hass-config
+      - config:/homebridge
